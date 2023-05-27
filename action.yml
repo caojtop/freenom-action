@@ -1,15 +1,16 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Freedom'
+description: 'Freedom auto renewal'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  FREENOM_USERNAME:  # id of input
+    description: 'FREENOM_USERNAME'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  FREENOM_PASSWORD:  # id of input
+    description: 'FREENOM_PASSWORD'
+    required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.FREENOM_USERNAME }}
+    - ${{ inputs.FREENOM_PASSWORD }}
