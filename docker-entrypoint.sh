@@ -25,4 +25,3 @@ grep -n "FREENOM_PASSWORD=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.
 cat /conf/.env
 php /app/run
 
-exec "$@"
