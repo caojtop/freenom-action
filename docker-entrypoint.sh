@@ -19,6 +19,9 @@ if [ ! -f /app/.env ]; then
     ln -s /conf/.env /app/.env || echo -e "[${yellow}Warn${plain}] 未能正常创建 .env 文件链接"
 fi
 
+grep -n "FREENOM_USERNAME" .env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_USERNAME='$1'/g" .env
+grep -n "FREENOM_PASSWORD" .env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_PASSWORD='$2'/g" .env
+
 php /app/run
 
 exec "$@"
