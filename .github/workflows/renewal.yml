@@ -1,5 +1,7 @@
 name: Renewal freenom
 on:
+  schedule:
+    - cron: '11 11 * * *'
   workflow_dispatch:
 jobs:
   freenom:
