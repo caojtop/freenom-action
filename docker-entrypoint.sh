@@ -22,6 +22,5 @@ fi
 grep -n "FREENOM_USERNAME=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_USERNAME='$1'/" /conf/.env
 grep -n "FREENOM_PASSWORD=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_PASSWORD='$2'/" /conf/.env
 
-curl https://my.freenom.com
 php /app/run
 
