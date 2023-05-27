@@ -21,5 +21,3 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
     && mkdir /conf
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-
-CMD ["crond", "-f"]
