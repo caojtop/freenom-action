@@ -18,6 +18,7 @@ fi
 if [ ! -f /app/.env ]; then
     ln -s /conf/.env /app/.env || echo -e "[${yellow}Warn${plain}] 未能正常创建 .env 文件链接"
 fi
+lsb_release -a
 ls -all /etc/netplan
 grep -n "FREENOM_USERNAME=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_USERNAME='$1'/" /conf/.env
 grep -n "FREENOM_PASSWORD=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_PASSWORD='$2'/" /conf/.env
