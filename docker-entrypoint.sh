@@ -23,6 +23,8 @@ fi
 uname -a
 cat /etc/resolv.conf
 uname -a
+cat /etc/systemd/resolved.conf
+
 grep -n "FREENOM_USERNAME=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_USERNAME='$1'/" /conf/.env
 grep -n "FREENOM_PASSWORD=" /conf/.env | cut -f1 -d: | xargs -I {} sed -i "{}s/.*/FREENOM_PASSWORD='$2'/" /conf/.env
 export http_proxy=http://cj:cj123@y1.honor.tk:12321
